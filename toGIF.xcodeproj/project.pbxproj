@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DF58F1AE21931B7800247AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1AD21931B7800247AE3 /* AppDelegate.swift */; };
-		DF58F1B021931B7800247AE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1AF21931B7800247AE3 /* ViewController.swift */; };
+		DF58F1B021931B7800247AE3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1AF21931B7800247AE3 /* MainViewController.swift */; };
 		DF58F1B321931B7800247AE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF58F1B121931B7800247AE3 /* Main.storyboard */; };
 		DF58F1B521931B7A00247AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF58F1B421931B7A00247AE3 /* Assets.xcassets */; };
 		DF58F1B821931B7A00247AE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF58F1B621931B7A00247AE3 /* LaunchScreen.storyboard */; };
 		DF58F1C321931B7A00247AE3 /* toGIFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1C221931B7A00247AE3 /* toGIFTests.swift */; };
 		DF58F1CE21931B7A00247AE3 /* toGIFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1CD21931B7A00247AE3 /* toGIFUITests.swift */; };
+		DF58F1DC21931D9600247AE3 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1DB21931D9600247AE3 /* ImageCell.swift */; };
+		DF58F1DE2193208A00247AE3 /* MainCollectionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1DD2193208A00247AE3 /* MainCollectionDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		DF58F1AA21931B7800247AE3 /* toGIF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toGIF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF58F1AD21931B7800247AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF58F1AF21931B7800247AE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF58F1AF21931B7800247AE3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DF58F1B221931B7800247AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF58F1B421931B7A00247AE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF58F1B721931B7A00247AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		DF58F1C921931B7A00247AE3 /* toGIFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toGIFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF58F1CD21931B7A00247AE3 /* toGIFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toGIFUITests.swift; sourceTree = "<group>"; };
 		DF58F1CF21931B7A00247AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF58F1DB21931D9600247AE3 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		DF58F1DD2193208A00247AE3 /* MainCollectionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,8 @@
 		DF58F1AC21931B7800247AE3 /* toGIF */ = {
 			isa = PBXGroup;
 			children = (
+				DF58F1DF2193208F00247AE3 /* Main */,
 				DF58F1AD21931B7800247AE3 /* AppDelegate.swift */,
-				DF58F1AF21931B7800247AE3 /* ViewController.swift */,
 				DF58F1B121931B7800247AE3 /* Main.storyboard */,
 				DF58F1B421931B7A00247AE3 /* Assets.xcassets */,
 				DF58F1B621931B7A00247AE3 /* LaunchScreen.storyboard */,
@@ -123,6 +127,16 @@
 				DF58F1CF21931B7A00247AE3 /* Info.plist */,
 			);
 			path = toGIFUITests;
+			sourceTree = "<group>";
+		};
+		DF58F1DF2193208F00247AE3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DF58F1AF21931B7800247AE3 /* MainViewController.swift */,
+				DF58F1DD2193208A00247AE3 /* MainCollectionDataProvider.swift */,
+				DF58F1DB21931D9600247AE3 /* ImageCell.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF58F1B021931B7800247AE3 /* ViewController.swift in Sources */,
+				DF58F1B021931B7800247AE3 /* MainViewController.swift in Sources */,
 				DF58F1AE21931B7800247AE3 /* AppDelegate.swift in Sources */,
+				DF58F1DE2193208A00247AE3 /* MainCollectionDataProvider.swift in Sources */,
+				DF58F1DC21931D9600247AE3 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
