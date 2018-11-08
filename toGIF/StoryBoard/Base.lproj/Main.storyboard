@@ -49,6 +49,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="image" destination="ItK-Gc-npc" id="VwT-7t-W11"/>
+                                            <segue destination="HWj-xO-y9G" kind="show" id="SGV-hN-Ho2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -89,6 +90,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdY-UE-TTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="-564.46776611694156"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="wsr-xL-h1T">
+            <objects>
+                <viewController id="HWj-xO-y9G" customClass="DetailViewController" customModule="toGIF" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wpl-Nk-bLV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6m8-f2-CGD">
+                                <rect key="frame" x="0.0" y="124" width="375" height="419"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="pkH-iK-Mgb">
+                                <rect key="frame" x="64" y="80" width="247" height="29"/>
+                                <segments>
+                                    <segment title="GIF"/>
+                                    <segment title="Video"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZD-Pz-Opz">
+                                <rect key="frame" x="164.5" y="577" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MGB-x4-2eW" firstAttribute="bottom" secondItem="ZZD-Pz-Opz" secondAttribute="bottom" constant="60" id="72x-bv-OrP"/>
+                            <constraint firstItem="6m8-f2-CGD" firstAttribute="leading" secondItem="MGB-x4-2eW" secondAttribute="leading" id="CKW-Cz-dhh"/>
+                            <constraint firstItem="6m8-f2-CGD" firstAttribute="top" secondItem="pkH-iK-Mgb" secondAttribute="bottom" constant="16" id="QHY-Ca-GIU"/>
+                            <constraint firstItem="MGB-x4-2eW" firstAttribute="trailing" secondItem="pkH-iK-Mgb" secondAttribute="trailing" constant="64" id="U2L-Di-3SY"/>
+                            <constraint firstItem="MGB-x4-2eW" firstAttribute="trailing" secondItem="6m8-f2-CGD" secondAttribute="trailing" id="YII-dA-6TS"/>
+                            <constraint firstItem="pkH-iK-Mgb" firstAttribute="centerX" secondItem="wpl-Nk-bLV" secondAttribute="centerX" id="i7I-cE-n4k"/>
+                            <constraint firstItem="pkH-iK-Mgb" firstAttribute="top" secondItem="MGB-x4-2eW" secondAttribute="top" constant="16" id="sHl-gD-9oK"/>
+                            <constraint firstItem="pkH-iK-Mgb" firstAttribute="leading" secondItem="MGB-x4-2eW" secondAttribute="leading" constant="64" id="uvZ-XR-iXC"/>
+                            <constraint firstItem="ZZD-Pz-Opz" firstAttribute="centerX" secondItem="wpl-Nk-bLV" secondAttribute="centerX" id="vbY-PY-VRM"/>
+                            <constraint firstItem="6m8-f2-CGD" firstAttribute="centerX" secondItem="wpl-Nk-bLV" secondAttribute="centerX" id="wcB-1x-8dN"/>
+                            <constraint firstItem="6m8-f2-CGD" firstAttribute="centerY" secondItem="wpl-Nk-bLV" secondAttribute="centerY" id="xgs-yz-5v1"/>
+                            <constraint firstItem="ZZD-Pz-Opz" firstAttribute="top" secondItem="6m8-f2-CGD" secondAttribute="bottom" constant="34" id="y5u-eJ-TF8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MGB-x4-2eW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="U4T-BM-MEw"/>
+                    <connections>
+                        <outlet property="containerView" destination="6m8-f2-CGD" id="iyj-WJ-1HQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3IY-5C-JE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1994" y="-564"/>
         </scene>
     </scenes>
 </document>

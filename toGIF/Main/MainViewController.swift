@@ -11,6 +11,7 @@ import Photos
 
 class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    var liveAssets: PHFetchResult<PHAsset>?
     var dataProvider = MainCollectionDataProvider()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +52,8 @@ class MainViewController: UIViewController {
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "mediaSubtype == %ld", PHAssetMediaSubtype.photoLive.rawValue)
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-//        let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        
+        self.liveAssets = fetchResult
         if fetchResult.count > 0 {
             for i in 0 ..< fetchResult.count {
                 imgManager.requestImage(for: fetchResult.object(at: i),
@@ -65,6 +65,14 @@ class MainViewController: UIViewController {
             }
         }else {
             print("You got no Photos!")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+            let detailController = segue.destination as! DetailViewController
+            detailController.liveAsset = self.liveAssets?[indexPath.item]
+            
         }
     }
 
