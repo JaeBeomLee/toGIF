@@ -14,11 +14,23 @@ class MainViewController: UIViewController {
     var dataProvider = MainCollectionDataProvider()
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureData()
         collectionView.dataSource = dataProvider
-//        collectionView.delegate = self
-        configureCollectionView()
         
+//        collectionView.delegate = self
+        PHPhotoLibrary.requestAuthorization{ response in
+            if response == PHAuthorizationStatus.authorized {
+                self.configureData()
+                DispatchQueue.main.async {
+                    self.configureCollectionView()
+                    self.collectionView.reloadData()
+                }
+                
+            }else {
+                let alert = UIAlertController(title: "We need Permission", message: "if you don't open library, you can't use toGIF ", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
     }
     
     func configureCollectionView(){
