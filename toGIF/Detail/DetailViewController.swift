@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
 
     var liveAsset: PHAsset?
     var moviePlayer: AVPlayerLayer!
+    var videoURL: URL!
     @IBOutlet weak var containerView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +38,7 @@ class DetailViewController: UIViewController {
             if error != nil{
                 print("Could not write video file")
             } else {
+                self.videoURL = movieURL
                 let player = AVPlayer(url: movieURL)
                 self.moviePlayer = AVPlayerLayer(player: player)
                 self.moviePlayer.videoGravity = .resizeAspectFill
@@ -63,4 +65,5 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    
 }
