@@ -2,7 +2,8 @@
 # platform :ios, '9.0'
 
 target 'toGIF' do
-  pod 'SnapKit', '~> 4.0.0'
+  # pod 'SnapKit', '~> 4.0.0'
+  # pod "Regift"
   use_frameworks!
 
   # Pods for toGIF

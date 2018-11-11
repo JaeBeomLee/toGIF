@@ -11,6 +11,7 @@
 		849AC37A58EC2B532C548479 /* Pods_toGIFUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BBA46C937971500D78757C /* Pods_toGIFUITests.framework */; };
 		CCCBACA6D447C347EB80926C /* Pods_toGIFTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E113859F61E7646DDC386F9D /* Pods_toGIFTests.framework */; };
 		D08B5D622195DA2B00B19BDA /* DetailViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B5D612195DA2B00B19BDA /* DetailViewController+Action.swift */; };
+		D08B5D652198721700B19BDA /* ContentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B5D642198721700B19BDA /* ContentsManager.swift */; };
 		DF58F1AE21931B7800247AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1AD21931B7800247AE3 /* AppDelegate.swift */; };
 		DF58F1B021931B7800247AE3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58F1AF21931B7800247AE3 /* MainViewController.swift */; };
 		DF58F1B321931B7800247AE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF58F1B121931B7800247AE3 /* Main.storyboard */; };
@@ -41,14 +42,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37A9710DEC159AE1B1CCD299 /* Pods-toGIF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIF.release.xcconfig"; path = "Pods/Target Support Files/Pods-toGIF/Pods-toGIF.release.xcconfig"; sourceTree = "<group>"; };
+		47F9AFCA775AEEECA13C2938 /* Pods-toGIFUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIFUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toGIFUITests/Pods-toGIFUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BDB9FF454CD4D8E5EF18B41 /* Pods-toGIFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIFTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-toGIFTests/Pods-toGIFTests.release.xcconfig"; sourceTree = "<group>"; };
 		60BBA46C937971500D78757C /* Pods_toGIFUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toGIFUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE46FAE37B60BDECC37027A /* Pods-toGIFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIFTests.release.xcconfig"; path = "Target Support Files/Pods-toGIFTests/Pods-toGIFTests.release.xcconfig"; sourceTree = "<group>"; };
 		82035BB8B16D3A3A02714EC9 /* Pods-toGIFUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIFUITests.release.xcconfig"; path = "Target Support Files/Pods-toGIFUITests/Pods-toGIFUITests.release.xcconfig"; sourceTree = "<group>"; };
 		82037F6BC903F5F489B984A1 /* Pods-toGIF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIF.debug.xcconfig"; path = "Target Support Files/Pods-toGIF/Pods-toGIF.debug.xcconfig"; sourceTree = "<group>"; };
 		8A126ADEAA9713C2A7B57953 /* Pods_toGIF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toGIF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A31C4245725FBFB2B0F29C4 /* Pods-toGIF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIF.release.xcconfig"; path = "Target Support Files/Pods-toGIF/Pods-toGIF.release.xcconfig"; sourceTree = "<group>"; };
+		928146EE7687234860D4B70B /* Pods-toGIFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toGIFTests/Pods-toGIFTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A4BED706FFD4C97B6F85B123 /* Pods-toGIFUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIFUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-toGIFUITests/Pods-toGIFUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B81F406AFCA7041078C6F1ED /* Pods-toGIFUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIFUITests.debug.xcconfig"; path = "Target Support Files/Pods-toGIFUITests/Pods-toGIFUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8B83360B0DEC2EB93179FF4 /* Pods-toGIF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toGIF/Pods-toGIF.debug.xcconfig"; sourceTree = "<group>"; };
 		D08B5D612195DA2B00B19BDA /* DetailViewController+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Action.swift"; sourceTree = "<group>"; };
+		D08B5D642198721700B19BDA /* ContentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsManager.swift; sourceTree = "<group>"; };
 		D0A28D9B3710E29D68A79C5E /* Pods-toGIFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toGIFTests.debug.xcconfig"; path = "Target Support Files/Pods-toGIFTests/Pods-toGIFTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF58F1AA21931B7800247AE3 /* toGIF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toGIF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF58F1AD21931B7800247AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +115,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D08B5D632198719F00B19BDA /* Contents Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D08B5D642198721700B19BDA /* ContentsManager.swift */,
+			);
+			path = "Contents Manager";
+			sourceTree = "<group>";
+		};
 		DF58F1A121931B7800247AE3 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +148,7 @@
 		DF58F1AC21931B7800247AE3 /* toGIF */ = {
 			isa = PBXGroup;
 			children = (
+				D08B5D632198719F00B19BDA /* Contents Manager */,
 				DF58F1DF2193208F00247AE3 /* Main */,
 				DFAD07B821947A33006380EC /* Detail */,
 				DFAD07B5219465E0006380EC /* StoryBoard */,
@@ -197,6 +214,12 @@
 				6CE46FAE37B60BDECC37027A /* Pods-toGIFTests.release.xcconfig */,
 				B81F406AFCA7041078C6F1ED /* Pods-toGIFUITests.debug.xcconfig */,
 				82035BB8B16D3A3A02714EC9 /* Pods-toGIFUITests.release.xcconfig */,
+				C8B83360B0DEC2EB93179FF4 /* Pods-toGIF.debug.xcconfig */,
+				37A9710DEC159AE1B1CCD299 /* Pods-toGIF.release.xcconfig */,
+				928146EE7687234860D4B70B /* Pods-toGIFTests.debug.xcconfig */,
+				5BDB9FF454CD4D8E5EF18B41 /* Pods-toGIFTests.release.xcconfig */,
+				47F9AFCA775AEEECA13C2938 /* Pods-toGIFUITests.debug.xcconfig */,
+				A4BED706FFD4C97B6F85B123 /* Pods-toGIFUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -212,7 +235,6 @@
 				DF58F1A621931B7800247AE3 /* Sources */,
 				DF58F1A721931B7800247AE3 /* Frameworks */,
 				DF58F1A821931B7800247AE3 /* Resources */,
-				11C73DDA9EA91852A9A9990C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -337,15 +359,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-toGIFUITests-checkManifestLockResult.txt",
 			);
@@ -354,42 +372,16 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		11C73DDA9EA91852A9A9990C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-toGIF/Pods-toGIF-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-toGIF/Pods-toGIF-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		138F63D2CE5F557FDD7515B3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-toGIF-checkManifestLockResult.txt",
 			);
@@ -403,15 +395,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-toGIFTests-checkManifestLockResult.txt",
 			);
@@ -430,6 +418,7 @@
 				DF58F1B021931B7800247AE3 /* MainViewController.swift in Sources */,
 				D08B5D622195DA2B00B19BDA /* DetailViewController+Action.swift in Sources */,
 				DF58F1AE21931B7800247AE3 /* AppDelegate.swift in Sources */,
+				D08B5D652198721700B19BDA /* ContentsManager.swift in Sources */,
 				DFAD07BA21947A61006380EC /* DetailViewController.swift in Sources */,
 				DF58F1DE2193208A00247AE3 /* MainCollectionDataProvider.swift in Sources */,
 				DF58F1DC21931D9600247AE3 /* ImageCell.swift in Sources */,
@@ -538,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -593,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -739,7 +728,7 @@
 				DF58F1D121931B7A00247AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		DF58F1D221931B7A00247AE3 /* Build configuration list for PBXNativeTarget "toGIF" */ = {
 			isa = XCConfigurationList;
@@ -748,7 +737,7 @@
 				DF58F1D421931B7A00247AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		DF58F1D521931B7A00247AE3 /* Build configuration list for PBXNativeTarget "toGIFTests" */ = {
 			isa = XCConfigurationList;
@@ -757,7 +746,7 @@
 				DF58F1D721931B7A00247AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		DF58F1D821931B7A00247AE3 /* Build configuration list for PBXNativeTarget "toGIFUITests" */ = {
 			isa = XCConfigurationList;
@@ -766,7 +755,7 @@
 				DF58F1DA21931B7A00247AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

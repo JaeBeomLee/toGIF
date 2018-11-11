@@ -11,7 +11,6 @@ import Photos
 
 class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    var liveAssets: PHFetchResult<PHAsset>?
     var dataProvider = MainCollectionDataProvider()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,34 +43,13 @@ class MainViewController: UIViewController {
     }
     
     func configureData(){
-        let imgManager = PHImageManager.default()
-        let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = true
-        requestOptions.deliveryMode = .fastFormat
-        
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.predicate = NSPredicate(format: "mediaSubtype == %ld", PHAssetMediaSubtype.photoLive.rawValue)
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        self.liveAssets = fetchResult
-        if fetchResult.count > 0 {
-            for i in 0 ..< fetchResult.count {
-                imgManager.requestImage(for: fetchResult.object(at: i),
-                                        targetSize: CGSize(width: 200, height: 200),
-                                        contentMode: .default,
-                                        options: requestOptions){ (image, error) in
-                                            self.dataProvider.images.append(image!)
-                }
-            }
-        }else {
-            print("You got no Photos!")
-        }
+        self.dataProvider.images = ContentsManager.shared.images(to: ContentsManager.shared.assets(to: .photoLive), size: CGSize(width: 200, height: 200))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = collectionView.indexPathsForSelectedItems?.first {
             let detailController = segue.destination as! DetailViewController
-            detailController.liveAsset = self.liveAssets?[indexPath.item]
+            detailController.liveAsset = ContentsManager.shared.assets(to: .photoLive)[indexPath.item]
             
         }
     }
