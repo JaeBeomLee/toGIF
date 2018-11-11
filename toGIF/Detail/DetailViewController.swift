@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let resources = ContentsManager.shared.resources(to: liveAsset!)
+        let resources = ContentsManager.shared.assetResources(to: liveAsset!)
         resources.forEach{ resource in
             if resource.type == .pairedVideo {
                 configureView(resource)

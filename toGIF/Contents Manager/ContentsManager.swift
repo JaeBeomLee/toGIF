@@ -40,7 +40,7 @@ class ContentsManager {
         return images
     }
     
-    func resources(to asset: PHAsset) -> [PHAssetResource] {
+    func assetResources(to asset: PHAsset) -> [PHAssetResource] {
         return PHAssetResource.assetResources(for: asset)
     }
     

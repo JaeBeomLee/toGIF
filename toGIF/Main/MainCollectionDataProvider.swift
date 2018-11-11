@@ -10,10 +10,7 @@ import UIKit
 import Photos
 class MainCollectionDataProvider: NSObject, UICollectionViewDataSource {
     var images = [UIImage]()
-    override init() {
-        
-        
-    }
+    override init() {}
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
