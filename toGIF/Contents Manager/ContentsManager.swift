@@ -14,6 +14,8 @@ class ContentsManager {
     }()
     
     let imageManager = PHImageManager.default()
+    let fileManager = FileManager.default
+    
     func assets(to type: PHAssetMediaSubtype) -> PHFetchResult<PHAsset> {
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "mediaSubtype == %ld", type.rawValue)
@@ -22,6 +24,7 @@ class ContentsManager {
         
         return fetchResult
     }
+    
     func images(to assets: PHFetchResult<PHAsset>, size: CGSize) -> [UIImage]{
         var images = [UIImage]()
         let requestOptions = PHImageRequestOptions()
@@ -35,5 +38,38 @@ class ContentsManager {
         }
         
         return images
+    }
+    
+    func resources(to asset: PHAsset) -> [PHAssetResource] {
+        return PHAssetResource.assetResources(for: asset)
+    }
+    
+    func videoURL(from resource: PHAssetResource) -> URL?{
+        let url = URL(fileURLWithPath: (NSTemporaryDirectory()).appending(resource.originalFilename))
+        removeFileIfExists(fileURL: url)
+        
+        PHAssetResourceManager.default().writeData(for: resource, toFile: url, options: nil){ error in }
+        
+        if isFileExist(this: url) {
+            return url
+        }else {
+            return nil
+        }
+        
+    }
+    
+    private func isFileExist(this url: URL)-> Bool{
+        return fileManager.fileExists(atPath: url.path)
+    }
+    
+    private func removeFileIfExists(fileURL : URL) {
+        if isFileExist(this: fileURL) {
+            do {
+                try fileManager.removeItem(at: fileURL)
+            }
+            catch {
+                print("Could not delete exist file so cannot write to it")
+            }
+        }
     }
 }
