@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         let resources = PHAssetResource.assetResources(for: liveAsset!)
         resources.forEach{ resource in
             if resource.type == .pairedVideo {
@@ -28,12 +29,11 @@ class DetailViewController: UIViewController {
     }
     
     func getMovieData(_ resource: PHAssetResource, asset: PHAsset){
-        let name =  URL(fileURLWithPath: asset.value(forKey: "filename") as! String).deletingPathExtension().lastPathComponent.appending(".mov")
         
-        let movieURL = URL(fileURLWithPath: (NSTemporaryDirectory()).appending(name))
+        let movieURL = URL(fileURLWithPath: (NSTemporaryDirectory()).appending(resource.originalFilename))
         removeFileIfExists(fileURL: movieURL)
         
-        
+
         PHAssetResourceManager.default().writeData(for: resource, toFile: movieURL as URL, options: nil) { (error) in
             if error != nil{
                 print("Could not write video file")
@@ -41,7 +41,7 @@ class DetailViewController: UIViewController {
                 self.videoURL = movieURL
                 let player = AVPlayer(url: movieURL)
                 self.moviePlayer = AVPlayerLayer(player: player)
-                self.moviePlayer.videoGravity = .resizeAspectFill
+                self.moviePlayer.videoGravity = .resizeAspect
                 self.moviePlayer.frame = self.containerView.bounds
                 self.containerView.layer.addSublayer(self.moviePlayer)
                 player.play()
