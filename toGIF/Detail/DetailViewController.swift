@@ -11,10 +11,10 @@ import Photos
 import AVKit
 
 class DetailViewController: UIViewController {
-
     var liveAsset: PHAsset?
     var moviePlayer: AVPlayerLayer!
     var videoURL: URL!
+    var player: AVPlayer?
     @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
@@ -28,17 +28,21 @@ class DetailViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.player?.pause()
+    }
+    
     func configureView(_ resource: PHAssetResource) {
         self.videoURL = ContentsManager.shared.videoURL(from: resource)
-        let player = AVPlayer(url: self.videoURL)
+        self.player = AVPlayer(url: self.videoURL)
         self.moviePlayer = AVPlayerLayer(player: player)
         self.moviePlayer.videoGravity = .resizeAspect
         self.moviePlayer.frame = self.containerView.bounds
         self.containerView.layer.addSublayer(self.moviePlayer)
-        player.play()
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
-            player.seek(to: .zero)
-            player.play()
+        self.player?.play()
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { _ in
+            self.player?.seek(to: .zero)
+            self.player?.play()
         }
     }
     
