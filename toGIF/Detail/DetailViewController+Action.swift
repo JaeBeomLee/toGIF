@@ -11,7 +11,12 @@ import Photos
 extension DetailViewController {
     @IBAction func convertButtonClicked(_ sender: Any) {
         PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoURL)
+            if self.mode == 0 {
+                PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: self.gifURL)
+            }else{
+                PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoURL)
+            }
+            
         }){ (isSaved, error) in
             if isSaved {
                 let alert = UIAlertController(title: "Save Complete", message: nil, preferredStyle: .alert)
@@ -23,6 +28,7 @@ extension DetailViewController {
     }
     
     @IBAction func clickedSegment(_ sender: UISegmentedControl) {
+        mode = sender.selectedSegmentIndex
         switch sender.selectedSegmentIndex {
         case 0:
             self.containerView.isHidden = true

@@ -12,9 +12,11 @@ import AVKit
 import SwiftyGif
 
 class DetailViewController: UIViewController {
+    var mode = 1
     var liveAsset: PHAsset?
     var moviePlayer: AVPlayerLayer!
     var videoURL: URL!
+    var gifURL: URL!
     var player: AVPlayer?
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var gifView: UIImageView!
@@ -62,7 +64,7 @@ class DetailViewController: UIViewController {
         let track = videoAsset.tracks(withMediaType: .video).first!
         let frameRate = track.nominalFrameRate
         
-        let gifURL = ContentsManager.shared.convertGIF(from: self.videoURL, duration: Float(duration), frameRate: Int(frameRate))
+        self.gifURL = ContentsManager.shared.convertGIF(from: self.videoURL, duration: Float(duration), frameRate: Int(frameRate))
         self.gifView.setGifFromURL(gifURL)
     }
     

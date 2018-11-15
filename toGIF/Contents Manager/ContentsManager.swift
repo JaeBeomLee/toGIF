@@ -31,11 +31,13 @@ class ContentsManager {
         var images = [UIImage]()
         let requestOptions = PHImageRequestOptions()
         requestOptions.isSynchronous = true
-        requestOptions.deliveryMode = .fastFormat
+        requestOptions.deliveryMode = .highQualityFormat
         
         for i in 0 ..< assets.count {
             imageManager.requestImage(for: assets.object(at: i), targetSize: size, contentMode: .default, options: requestOptions){ (image, error) in
-                images.append(image!)
+                autoreleasepool{
+                    images.append(image!)
+                }
             }
         }
         
