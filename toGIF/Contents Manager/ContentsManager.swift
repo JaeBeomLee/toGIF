@@ -8,6 +8,8 @@
 
 import Foundation
 import Photos
+import Regift
+
 class ContentsManager {
     static let shared: ContentsManager = {
         return ContentsManager()
@@ -45,7 +47,7 @@ class ContentsManager {
     }
     
     func videoURL(from resource: PHAssetResource) -> URL?{
-        let url = URL(fileURLWithPath: (NSTemporaryDirectory()).appending(resource.originalFilename))
+        let url = URL(fileURLWithPath: (NSTemporaryDirectory()).appending("video.mov"))
         removeFileIfExists(fileURL: url)
         
         PHAssetResourceManager.default().writeData(for: resource, toFile: url, options: nil){ error in }
@@ -56,6 +58,16 @@ class ContentsManager {
             return nil
         }
         
+    }
+    
+    func convertGIF(from video: URL, duration: Float, frameRate: Int) -> URL? {
+        var result: URL?
+        
+        Regift.createGIFFromSource(video, startTime: 0.0, duration: duration, frameRate: frameRate){ url in
+            result = url
+        }
+        
+        return result
     }
     
     private func isFileExist(this url: URL)-> Bool{

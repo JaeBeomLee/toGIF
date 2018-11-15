@@ -21,4 +21,21 @@ extension DetailViewController {
             
         }
     }
+    
+    @IBAction func clickedSegment(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.containerView.isHidden = true
+            self.player?.pause()
+            self.gifView.isHidden = false
+            configureGifView()
+        case 1:
+            self.gifView.isHidden = true
+//            self.gifView.image = nil
+            self.containerView.isHidden = true
+            configureVideoView()
+        default:
+            break
+        }
+    }
 }

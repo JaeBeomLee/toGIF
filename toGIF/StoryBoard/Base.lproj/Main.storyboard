@@ -111,6 +111,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ion-S0-y31">
                                 <rect key="frame" x="0.0" y="64" width="375" height="500"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xZR-sI-e25">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xZR-sI-e25" secondAttribute="height" multiplier="3:4" id="akQ-Iq-Emp"/>
+                                        </constraints>
+                                    </imageView>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6m8-f2-CGD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,9 +127,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="xZR-sI-e25" firstAttribute="centerY" secondItem="Ion-S0-y31" secondAttribute="centerY" id="0cz-O1-f5e"/>
                                     <constraint firstItem="6m8-f2-CGD" firstAttribute="centerY" secondItem="Ion-S0-y31" secondAttribute="centerY" id="3RG-1D-CNT"/>
+                                    <constraint firstItem="xZR-sI-e25" firstAttribute="leading" secondItem="Ion-S0-y31" secondAttribute="leading" id="8v6-XN-NSH"/>
                                     <constraint firstAttribute="trailing" secondItem="6m8-f2-CGD" secondAttribute="trailing" id="GxR-r2-qWh"/>
                                     <constraint firstItem="6m8-f2-CGD" firstAttribute="leading" secondItem="Ion-S0-y31" secondAttribute="leading" id="bQj-sw-Vhm"/>
+                                    <constraint firstAttribute="trailing" secondItem="xZR-sI-e25" secondAttribute="trailing" id="tWk-6d-D73"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -150,6 +159,9 @@
                                 <segment title="Video"/>
                             </segments>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="clickedSegment:" destination="HWj-xO-y9G" eventType="valueChanged" id="Ztb-S8-SMW"/>
+                            </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="27J-gt-yP3">
                             <connections>
@@ -159,6 +171,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="6m8-f2-CGD" id="iyj-WJ-1HQ"/>
+                        <outlet property="gifView" destination="xZR-sI-e25" id="Kz7-GG-QZe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3IY-5C-JE1" userLabel="First Responder" sceneMemberID="firstResponder"/>

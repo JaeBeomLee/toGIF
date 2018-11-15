@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import AVKit
+import SwiftyGif
 
 class DetailViewController: UIViewController {
     var liveAsset: PHAsset?
@@ -16,6 +17,8 @@ class DetailViewController: UIViewController {
     var videoURL: URL!
     var player: AVPlayer?
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var gifView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +26,23 @@ class DetailViewController: UIViewController {
         let resources = ContentsManager.shared.assetResources(to: liveAsset!)
         resources.forEach{ resource in
             if resource.type == .pairedVideo {
-                configureView(resource)
+                initURL(resource)
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureVideoView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.player?.pause()
     }
-    
-    func configureView(_ resource: PHAssetResource) {
+    func initURL(_ resource: PHAssetResource){
         self.videoURL = ContentsManager.shared.videoURL(from: resource)
+    }
+    
+    func configureVideoView() {
         self.player = AVPlayer(url: self.videoURL)
         self.moviePlayer = AVPlayerLayer(player: player)
         self.moviePlayer.videoGravity = .resizeAspect
@@ -44,6 +53,17 @@ class DetailViewController: UIViewController {
             self.player?.seek(to: .zero)
             self.player?.play()
         }
+    }
+    
+    func configureGifView(){
+        let videoAsset = AVURLAsset(url: self.videoURL)
+        
+        let duration = CMTimeGetSeconds(videoAsset.duration)
+        let track = videoAsset.tracks(withMediaType: .video).first!
+        let frameRate = track.nominalFrameRate
+        
+        let gifURL = ContentsManager.shared.convertGIF(from: self.videoURL, duration: Float(duration), frameRate: Int(frameRate))
+        self.gifView.setGifFromURL(gifURL)
     }
     
 }

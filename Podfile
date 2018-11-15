@@ -3,7 +3,8 @@
 
 target 'toGIF' do
   # pod 'SnapKit', '~> 4.0.0'
-  # pod "Regift"
+  pod "Regift"
+  pod 'SwiftyGif'
   use_frameworks!
 
   # Pods for toGIF
