@@ -16,10 +16,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = dataProvider
         
-//        collectionView.delegate = self
         PHPhotoLibrary.requestAuthorization{ response in
             if response == PHAuthorizationStatus.authorized {
-                self.configureData()
+                self.dataProvider.initTotalAssets()
+                self.dataProvider.initTotalPages()
+                self.dataProvider.addCurrentPageAssets()
+                self.dataProvider.configureData()
                 DispatchQueue.main.async {
                     self.configureCollectionView()
                     self.collectionView.reloadData()
@@ -42,9 +44,7 @@ class MainViewController: UIViewController {
         collectionView!.collectionViewLayout = layout
     }
     
-    func configureData(){
-        self.dataProvider.images = ContentsManager.shared.images(to: ContentsManager.shared.assets(to: .photoLive), size: CGSize(width: 200, height: 200))
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = collectionView.indexPathsForSelectedItems?.first {

@@ -53,7 +53,6 @@ class ContentsManager {
         removeFileIfExists(fileURL: url)
         
         PHAssetResourceManager.default().writeData(for: resource, toFile: url, options: nil){ error in }
-        
         if isFileExist(this: url) {
             return url
         }else {
@@ -62,10 +61,9 @@ class ContentsManager {
         
     }
     
-    func convertGIF(from video: URL, duration: Float, frameRate: Int) -> URL? {
+    func convertGIF(from video: URL, duration: Float, frameRate: Int, size: CGSize) -> URL? {
         var result: URL?
-        
-        Regift.createGIFFromSource(video, startTime: 0.0, duration: duration, frameRate: frameRate){ url in
+        Regift.createGIFFromSource(video, startTime: 0.0, duration: duration, frameRate: frameRate, size: size){ url in
             result = url
         }
         

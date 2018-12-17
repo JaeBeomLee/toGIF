@@ -63,8 +63,9 @@ class DetailViewController: UIViewController {
         let duration = CMTimeGetSeconds(videoAsset.duration)
         let track = videoAsset.tracks(withMediaType: .video).first!
         let frameRate = track.nominalFrameRate
-        
-        self.gifURL = ContentsManager.shared.convertGIF(from: self.videoURL, duration: Float(duration), frameRate: Int(frameRate))
+        let halfWidth = track.naturalSize.width / 2
+        let halfHeight = track.naturalSize.height / 2
+        self.gifURL = ContentsManager.shared.convertGIF(from: self.videoURL, duration: Float(duration), frameRate: Int(frameRate), size: CGSize(width: 375, height: 500))
         self.gifView.setGifFromURL(gifURL)
     }
     
