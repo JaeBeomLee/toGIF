@@ -10,6 +10,7 @@ import UIKit
 import Photos
 import AVKit
 import SwiftyGif
+import PryntTrimmerView
 
 class DetailViewController: UIViewController {
     var mode = 1
@@ -20,6 +21,8 @@ class DetailViewController: UIViewController {
     var player: AVPlayer?
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var gifView: UIImageView!
+    @IBOutlet weak var trimView: TrimmerView!
+    
     
     
     override func viewDidLoad() {
@@ -51,6 +54,7 @@ class DetailViewController: UIViewController {
         self.moviePlayer.frame = self.containerView.bounds
         self.containerView.layer.addSublayer(self.moviePlayer)
         self.player?.play()
+        configureTrimView()
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { _ in
             self.player?.seek(to: .zero)
             self.player?.play()
@@ -69,4 +73,25 @@ class DetailViewController: UIViewController {
         self.gifView.setGifFromURL(gifURL)
     }
     
+    func configureTrimView(){
+        DispatchQueue.main.async {
+            let videoAsset = self.player?.currentItem?.asset
+            self.trimView.asset = videoAsset
+            self.trimView.delegate = self
+        }
+        
+    }
+}
+
+extension DetailViewController: TrimmerViewDelegate {
+    func didChangePositionBar(_ playerTime: CMTime) {
+        player?.seek(to: playerTime, toleranceBefore: .zero, toleranceAfter: .zero)
+        player?.play()
+        
+    }
+    
+    func positionBarStoppedMoving(_ playerTime: CMTime) {
+        player?.pause()
+        player?.seek(to: playerTime, toleranceBefore: .zero, toleranceAfter: .zero)
+    }
 }

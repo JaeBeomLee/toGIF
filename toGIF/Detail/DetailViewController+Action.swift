@@ -44,4 +44,10 @@ extension DetailViewController {
             break
         }
     }
+    
+    @IBAction func clickedShare(_ sender: Any) {
+        let shareAlert = UIActivityViewController(activityItems: [self.videoURL], applicationActivities: nil)
+        shareAlert.popoverPresentationController?.sourceView = self.view
+        self.present(shareAlert, animated: true, completion: nil)
+    }
 }

@@ -103,9 +103,33 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxV-os-rNX">
                                 <rect key="frame" x="0.0" y="564" width="375" height="103"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nE7-cx-IY7">
+                                        <rect key="frame" x="0.0" y="59" width="375" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="action" id="QVd-Ue-SFA">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="clickedShare:" destination="HWj-xO-y9G" id="J7S-x9-sUd"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2U-DB-4gU" customClass="TrimmerView" customModule="PryntTrimmerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="R2U-DB-4gU" firstAttribute="leading" secondItem="yxV-os-rNX" secondAttribute="leading" id="2dW-XA-81L"/>
                                     <constraint firstAttribute="height" constant="103" id="BAS-Gk-1LS"/>
+                                    <constraint firstAttribute="bottom" secondItem="nE7-cx-IY7" secondAttribute="bottom" id="BG2-fl-QDK"/>
+                                    <constraint firstAttribute="trailing" secondItem="nE7-cx-IY7" secondAttribute="trailing" id="DcG-4g-Ay7"/>
+                                    <constraint firstItem="nE7-cx-IY7" firstAttribute="leading" secondItem="yxV-os-rNX" secondAttribute="leading" id="Frt-cz-RHk"/>
+                                    <constraint firstItem="nE7-cx-IY7" firstAttribute="top" secondItem="R2U-DB-4gU" secondAttribute="bottom" id="RUY-1z-Oie"/>
+                                    <constraint firstAttribute="trailing" secondItem="R2U-DB-4gU" secondAttribute="trailing" id="mIk-7c-g9Y"/>
+                                    <constraint firstItem="R2U-DB-4gU" firstAttribute="top" secondItem="yxV-os-rNX" secondAttribute="top" id="xwR-gT-6FP"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ion-S0-y31">
@@ -172,11 +196,12 @@
                     <connections>
                         <outlet property="containerView" destination="6m8-f2-CGD" id="iyj-WJ-1HQ"/>
                         <outlet property="gifView" destination="xZR-sI-e25" id="Kz7-GG-QZe"/>
+                        <outlet property="trimView" destination="R2U-DB-4gU" id="uLW-SJ-P8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3IY-5C-JE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992.8" y="-564.53201970443354"/>
+            <point key="canvasLocation" x="1992.8" y="-565.36731634182911"/>
         </scene>
     </scenes>
 </document>

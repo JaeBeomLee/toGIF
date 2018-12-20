@@ -396,23 +396,23 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-toGIF/Pods-toGIF-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-toGIF/Pods-toGIF-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Regift/Regift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Regift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-toGIF/Pods-toGIF-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-toGIF/Pods-toGIF-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F92874805DFA6FCBAC145589 /* [CP] Check Pods Manifest.lock */ = {
@@ -659,7 +659,7 @@
 		};
 		DF58F1D621931B7A00247AE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0A28D9B3710E29D68A79C5E /* Pods-toGIFTests.debug.xcconfig */;
+			baseConfigurationReference = 8A31C4245725FBFB2B0F29C4 /* Pods-toGIF.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
